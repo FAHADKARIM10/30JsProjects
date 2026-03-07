@@ -1,0 +1,64 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+
+
+.container{
+    text-align:center;
+}
+
+
+
+h1{
+    font-size:3.5rem;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+
+span{
+    color:#00e5ff;
+    font-weight:700;
+    position:relative;
+}
+
+
+span::after{
+    content:"|";
+    position:absolute;
+    right:-8px;
+    animation:blink 1s infinite;
+}
+
+
+@keyframes blink{
+    0%{opacity:1}
+    50%{opacity:0}
+    100%{opacity:1}
+}
+
+
+@media (max-width:768px){
+
+    h1{
+        font-size:2.2rem;
+    }
+
+}
+
