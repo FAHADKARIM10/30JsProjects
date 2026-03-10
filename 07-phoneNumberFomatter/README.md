@@ -34,6 +34,6 @@ CSS – Styling and layout
 JavaScript – Real-time number formatting
 
 
-
-
 ![alt text](<Screenshot 2026-03-05 090230.png>)
+
+
