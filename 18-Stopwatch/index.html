@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONO — Precision Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    
+    <div class="corner top-left"><span>CHRONO</span><span>v2.0</span></div>
+    <div class="corner top-right"><span>PRECISION</span><span>TIMER</span></div>
+    <div class="corner bot-left"><span>STATUS</span><span id="status-label">IDLE</span></div>
+    <div class="corner bot-right"><span>LAP</span><span id="lap-count">00</span></div>
+
+    <main class="container">
+
+        <header>
+            <div class="header-line"></div>
+            <p class="subtitle">HIGH-PRECISION CHRONOGRAPH</p>
+            <div class="header-line"></div>
+        </header>
+
+        <section class="display-wrapper">
+            <div class="display-ring">
+                <div class="display-ring-inner">
+                    <div class="tick-marks">
+                        <div class="tick-ring" id="tick-ring"></div>
+                    </div>
+                    <div class="display-face">
+                        <div class="unit-row">
+                            <div class="unit">
+                                <span class="unit-label">HH</span>
+                                <span class="digit" id="hour-display">00</span>
+                            </div>
+                            <div class="colon-group">
+                                <span class="colon" id="c1">:</span>
+                            </div>
+                            <div class="unit">
+                                <span class="unit-label">MM</span>
+                                <span class="digit" id="minute-display">00</span>
+                            </div>
+                            <div class="colon-group">
+                                <span class="colon" id="c2">:</span>
+                            </div>
+                            <div class="unit">
+                                <span class="unit-label">SS</span>
+                                <span class="digit" id="second-display">00</span>
+                            </div>
+                        </div>
+                        <div class="ms-display">
+                            <span>.</span><span id="ms-display">00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+            <div class="progress-label">60s CYCLE</div>
+        </div>
+
+        <section class="controls">
+            <button class="btn btn-stop" onclick="watchStop()" title="Stop">
+                <div class="btn-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+                </div>
+                <span class="btn-label">STOP</span>
+            </button>
+
+            <button class="btn btn-start" onclick="watchStart()" title="Start">
+                <div class="btn-icon btn-icon-main">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+                <span class="btn-label">START</span>
+            </button>
+
+            <button class="btn btn-reset" onclick="watchReset()" title="Reset">
+                <div class="btn-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                </div>
+                <span class="btn-label">RESET</span>
+            </button>
+        </section>
+
+        <button class="btn-lap" onclick="recordLap()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            LAP
+        </button>
+
+        <section class="lap-section" id="lap-section">
+            <div class="lap-header">
+                <span>LAP</span>
+                <span>SPLIT</span>
+                <span>TOTAL</span>
+            </div>
+            <div class="lap-list" id="lap-list"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
